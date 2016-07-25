@@ -1,5 +1,37 @@
 Rails.application.routes.draw do
   devise_for :users
+
+get "boards" => "boards#index"
+get "boards/new" => "boards#new"
+post "/boards" => "boards#create"
+get "/boards/:id/edit" => "boards#edit", as: "edit_board"
+get "boards/:id" => "boards#show", as: "board"
+patch "boards/:id" => "board#update"
+delete "boards/:id" => "board#destroy"
+
+get "categories" => "categories#index"
+get "categories/new" => "categories#new"
+post "/categories" => "categories#create"
+get "/categories/:id/edit" => "categories#edit", as: "edit_category"
+get "categories/:id" => "categories#show", as: "category"
+patch "categories/:id" => "category#update"
+delete "categories/:id" => "category#destroy"
+
+get "images" => "images#index"
+get "images/new" => "images#new"
+post "/images" => "images#create"
+get "/images/:id/edit" => "images#edit", as: "edit_image"
+get "images/:id" => "images#show", as: "image"
+patch "images/:id" => "image#update"
+delete "images/:id" => "image#destroy"
+
+get "recipe_steps" => "recipe_steps#index"
+get "recipe_steps/new" => "recipe_steps#new"
+post "/recipe_steps" => "recipe_steps#create"
+get "/recipe_steps/:id/edit" => "recipe_steps#edit", as: "edit_recipe_step"
+get "recipe_steps/:id" => "recipe_steps#show", as: "recipe_step"
+patch "recipe_steps/:id" => "recipe_step#update"
+delete "recipe_steps/:id" => "recipe_step#destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
