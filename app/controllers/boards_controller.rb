@@ -15,7 +15,7 @@ def new
 end
 
 def create
-  @board = Board.new(params.require(:board).permit(:name_of_food))
+  @board = Board.new(params.require(:board).permit(:name_of_food, :category_id))
 
   if @board.save
     redirect_to boards_path

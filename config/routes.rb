@@ -26,7 +26,7 @@ patch "images/:id" => "images#update"
 delete "images/:id" => "images#destroy"
 
 get "recipe_steps" => "recipe_steps#index"
-get "recipe_steps/new" => "recipe_steps#new"
+get "recipe_steps/new" => "recipe_steps#new", as: :new_recipe_step
 post "/recipe_steps" => "recipe_steps#create"
 get "/recipe_steps/:id/edit" => "recipe_steps#edit", as: :edit_recipe_step
 get "recipe_steps/:id" => "recipe_steps#show", as: :recipe_step

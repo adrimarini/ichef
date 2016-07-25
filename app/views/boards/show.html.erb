@@ -1,14 +1,16 @@
-<h1> <%= @board.name_of_food %> </h1>
+<h1><%= @board.name_of_food %></h1>
 <%= @board.category.name %>
 <% @board.images.each do |image| %>
   <%= image_tag(image.url) %>
 <% end %>
 
-<p>category
-  image
-   recipe_steps
-   </p>
+<% @board.recipe_steps.each do |recipe_step| %>
+  <%= recipe_step.step %>
+<% end %>
 
+
+<%= link_to "Add recipe step", new_recipe_step_path(board_id: @board.id) %>
+<%= link_to "Add Image", new_image_path(board_id: @board.id) %>
 <%= link_to "Back to Cook Book", boards_path %>
 <%= link_to "Edit", edit_board_path(@board) %>
 <%= link_to "Delete Board", board_path, method: :delete, data: { confirm: "Are you sure you want to delete this board?"} %>

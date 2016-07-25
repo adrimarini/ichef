@@ -23,7 +23,7 @@ boards = Board.create([
   {name_of_food: "Morning Bun", category: Category.find_by(name: "Breakfast")}
 ])
 
-recipe_steps = Recipe_step.create([
+recipe_steps = RecipeStep.create([
   {step: "Get 4 sticks of butter and set aside", board: Board.first },
   {step: "Start with adding one cup of flour to a large mixing bowl", board: Board.last}
 ])
