@@ -1,10 +1,10 @@
-<h1><%= @name_of_food %></h1>
+<h1> COOK BOOK </h1>
 
 <ul>
     <% @boards.each do |board| %>
-        <%= @images. %>
-        category
-        recipe_steps
-         <%= link_to "see board info...", bean_path(bean) %>
+        <strong><%=link_to board.name_of_food, board_path(board)%></strong>
+
     <% end %>
 </ul>
+
+<%= link_to "Add a Board", new_board_path(@board) %>

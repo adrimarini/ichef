@@ -1,0 +1,15 @@
+<h1>Add a new image</h1>
+
+<%= form_for @image do |f| %>
+
+    <div>
+        <%= f.label :url %>
+        <%= f.text_field :url %>
+    </div>
+
+
+    <%= f.submit "Add image" %>
+
+<% end %>
+
+<%= link_to "Back to Cookbook", boards_path %>

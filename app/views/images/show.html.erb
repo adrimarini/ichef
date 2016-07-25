@@ -1,0 +1,5 @@
+<p>Images</p>
+
+<%= link_to "Back to images", image_path %>
+<%= link_to "Edit", edit_image_path(image) %>
+<%= link_to "Delete", image_path, method: :delete, data: { confirm: "Are you sure you want to delete this image?"} %>

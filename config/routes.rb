@@ -2,36 +2,44 @@ Rails.application.routes.draw do
   devise_for :users
 
 get "boards" => "boards#index"
-get "boards/new" => "boards#new"
+get "boards/new" => "boards#new", as: :new_board
 post "/boards" => "boards#create"
-get "/boards/:id/edit" => "boards#edit", as: "edit_board"
-get "boards/:id" => "boards#show", as: "board"
-patch "boards/:id" => "board#update"
-delete "boards/:id" => "board#destroy"
+get "/boards/:id/edit" => "boards#edit", as: :edit_board
+get "boards/:id" => "boards#show", as: :board
+patch "boards/:id" => "boards#update"
+delete "boards/:id" => "boards#destroy"
 
 get "categories" => "categories#index"
-get "categories/new" => "categories#new"
+get "categories/new" => "categories#new", as: :new_category
 post "/categories" => "categories#create"
-get "/categories/:id/edit" => "categories#edit", as: "edit_category"
-get "categories/:id" => "categories#show", as: "category"
-patch "categories/:id" => "category#update"
-delete "categories/:id" => "category#destroy"
+get "/categories/:id/edit" => "categories#edit", as: :edit_category
+get "categories/:id" => "categories#show", as: :category
+patch "categories/:id" => "categories#update"
+delete "categories/:id" => "categories#destroy"
 
 get "images" => "images#index"
-get "images/new" => "images#new"
+get "images/new" => "images#new", as: :new_image
 post "/images" => "images#create"
-get "/images/:id/edit" => "images#edit", as: "edit_image"
-get "images/:id" => "images#show", as: "image"
-patch "images/:id" => "image#update"
-delete "images/:id" => "image#destroy"
+get "/images/:id/edit" => "images#edit", as: :edit_image
+get "images/:id" => "images#show", as: :image
+patch "images/:id" => "images#update"
+delete "images/:id" => "images#destroy"
 
 get "recipe_steps" => "recipe_steps#index"
 get "recipe_steps/new" => "recipe_steps#new"
 post "/recipe_steps" => "recipe_steps#create"
-get "/recipe_steps/:id/edit" => "recipe_steps#edit", as: "edit_recipe_step"
-get "recipe_steps/:id" => "recipe_steps#show", as: "recipe_step"
-patch "recipe_steps/:id" => "recipe_step#update"
-delete "recipe_steps/:id" => "recipe_step#destroy"
+get "/recipe_steps/:id/edit" => "recipe_steps#edit", as: :edit_recipe_step
+get "recipe_steps/:id" => "recipe_steps#show", as: :recipe_step
+patch "recipe_steps/:id" => "recipe_steps#update"
+delete "recipe_steps/:id" => "recipe_steps#destroy"
+
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

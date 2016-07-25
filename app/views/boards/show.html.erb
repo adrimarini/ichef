@@ -1,4 +1,8 @@
 <h1> <%= @board.name_of_food %> </h1>
+<%= @board.category.name %>
+<% @board.images.each do |image| %>
+  <%= image_tag(image.url) %>
+<% end %>
 
 <p>category
   image
@@ -6,5 +10,5 @@
    </p>
 
 <%= link_to "Back to Cook Book", boards_path %>
-<%= link_to "Edit", edit_bean_path(@bean) %>
+<%= link_to "Edit", edit_board_path(@board) %>
 <%= link_to "Delete Board", board_path, method: :delete, data: { confirm: "Are you sure you want to delete this board?"} %>

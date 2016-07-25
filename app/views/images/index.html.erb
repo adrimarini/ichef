@@ -1,0 +1,13 @@
+<h1> Images </h1>
+
+<%= link_to "Add a new image", new_image_path(@image) %>
+<ul>
+    <% @images.each do |image| %>
+        <li>
+             <%= image_tag(image.url) %> <%= link_to "edit", edit_image_path(image) %>
+        </li>
+
+    <% end %>
+
+    <%= link_to "Back to Cook Book", boards_path %>
+</ul>
