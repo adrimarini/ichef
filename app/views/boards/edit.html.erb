@@ -3,10 +3,12 @@
 <%= form_for @board do |f| %>
 
 <div>
-    <%= f.label :name_of_food %>
-    <%= f.text_field :name_of_food %>
+  <%= f.label :name_of_food %>
+  <%= f.text_field :name_of_food %>
 </div>
-
+<div>
+  <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+</div>
 
 
     <%= f.submit "Submit changes" %>

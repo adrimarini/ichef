@@ -14,11 +14,37 @@
  *
 *
 *= require rails_bootstrap_forms
-*= require_tree .
 *= require_self
+*= require_tree .
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes|Tangerine);
+
+nav {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+}
+#user-nav{
+  font-family: futura;
+  padding: 10px;
+}
+
+#logo{
+  font-family: futura;
+  font-size: 24pt;
+  color: #000;
+}
+#cookbook-link{
+  font-family: futura;
+  font-size: 12pt;
+  color: #000;
+}
+#cookbook-label{
+
+  font-size: 50px;
+  margin: 0 auto;
+}
 
 .recipe_container{
   float: left;

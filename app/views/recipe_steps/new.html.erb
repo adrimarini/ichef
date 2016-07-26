@@ -2,19 +2,14 @@
 
 <%= form_for @recipe_step do |f| %>
 
-    <div>
-        <%= f.label :step %>
-        <%= f.text_field :step %>
-    </div>
+  <div>
+      <%= f.label :step %>
+      <%= f.text_field :step %>
+  </div>
 
+  <%= f.hidden_field :board_id, :value => params[:board_id] %>
 
-
-
-
-
-<%= f.hidden_field :board_id, :value => params[:board_id] %>
-
-    <%= f.submit "Create recipe" %>
+  <%= f.submit "Create recipe" %>
 
 <% end %>
 

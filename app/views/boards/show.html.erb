@@ -1,4 +1,4 @@
-<h1><%= @board.name_of_food %></h1> <button><%= link_to "edit board name", edit_board_path(@board) %></button>
+<h1><%= @board.name_of_food %></h1> <button><%= link_to "edit board", edit_board_path(@board) %></button>
 <h2><%= @board.category.name %></h2>
 <div class="image_container">
   <% @board.images.each do |image| %>
@@ -13,7 +13,7 @@
 <%= form_for @recipe_step do |f| %>
     <div>
         <%= f.label "steps to recipe:" %>
-        <%= f.text_field :step %>
+        <%= f.text_field :step, autofocus: "on" %>
     </div>
 
 <%= f.hidden_field :board_id, :value => @board.id %>

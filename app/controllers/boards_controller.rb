@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @boards = Board.all
+    @boards = Board.where(:user_id => current_user.id)
   end
 
   def show
@@ -17,9 +17,10 @@ class BoardsController < ApplicationController
 
   def create
     @board = Board.new(params.require(:board).permit(:name_of_food, :category_id))
+    @board.user_id = current_user.id
 
     if @board.save
-      redirect_to boards_path
+      redirect_to board_path(@board.id)
     else
       render :new
     end
@@ -32,8 +33,8 @@ class BoardsController < ApplicationController
   def update
     @board = Board.find(params[:id])
 
-    if @board.update_attributes(params.require(:board).permit(:name_of_food))
-      redirect_to boards_path
+    if @board.update_attributes(params.require(:board).permit(:name_of_food, :category_id))
+      redirect_to board_path(@board.id)
     else
       render :edit
     end
