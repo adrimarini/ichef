@@ -20,14 +20,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import url(https://fonts.googleapis.com/css?family=Great+Vibes|Tangerine);
+@import url(https://fonts.googleapis.com/css?family=Tangerine|Pinyon+Script|Petit+Formal+Script);
 
 nav {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
 }
+
+.board{
+  width: 350px;
+  height: 350px;
+  border: solid 1px black;
+  padding: 10px;
+  padding-top: 165px;
+  margin: 10px;
+  text-align: center;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 15pt;
+}
+
+
+#boards_container{
+  margin: 0 auto;
+  width: 85%;
+}
+
+
 #user-nav{
   font-family: futura;
   padding: 10px;
+
 }
 
 #logo{
@@ -44,6 +65,7 @@ nav {
 
   font-size: 50px;
   margin: 0 auto;
+  width: 20%;
 }
 
 .recipe_container{

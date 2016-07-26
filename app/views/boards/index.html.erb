@@ -1,10 +1,10 @@
 <h1 id="cookbook-label"> <%= current_user.first_name.upcase %>'S COOK BOOK </h1>
 
-<ul>
+<div class="row" id="boards_container">
     <% @boards.each do |board| %>
-        <strong><%=link_to board.name_of_food, board_path(board)%></strong>
+    <div class="col-md-2 board"><strong><%=link_to board.name_of_food, board_path(board)%></strong></div>
 
     <% end %>
-</ul>
+</div>
 
 <%= link_to "Add a Board", new_board_path(@board) %>
