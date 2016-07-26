@@ -1,4 +1,4 @@
-<h1>Add a new Recipe</h1>
+<h1>Recipe</h1>
 
 <%= form_for @recipe_step do |f| %>
 
@@ -7,10 +7,15 @@
         <%= f.text_field :step %>
     </div>
 
+
+
+
+
+
 <%= f.hidden_field :board_id, :value => params[:board_id] %>
 
-    <%= f.submit "Create recipe step" %>
+    <%= f.submit "Create recipe" %>
 
 <% end %>
 
-<%= link_to "Back to the recipes list", recipe_steps_path %>
+<%= link_to "Back to board", recipe_steps_path %>

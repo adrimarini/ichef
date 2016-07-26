@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
 root 'welcome#index'
 
-  devise_for :users
+devise_for :users
 
-get "boards" => "boards#index", as: :boards 
+get "boards" => "boards#index", as: :boards
 get "boards/new" => "boards#new", as: :new_board
 post "/boards" => "boards#create"
 get "/boards/:id/edit" => "boards#edit", as: :edit_board
