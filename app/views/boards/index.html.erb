@@ -2,7 +2,7 @@
 
 <div class="row" id="boards_container">
     <% @boards.each do |board| %>
-    <div class="col-md-2 board"><strong><%=link_to board.name_of_food, board_path(board)%></strong></div>
+    <div class="col-md-2 board"><strong><%=link_to image_tag(board.main_image), board_path(board)%></strong></div>
 
     <% end %>
 </div>
