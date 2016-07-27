@@ -8,7 +8,7 @@ class Board < ActiveRecord::Base
     if self.images.count > 0
       self.images.first.url
     else
-      "http://placekitten.com/350/400"
+      "http://lorempixel.com/350/400/food/"
     end
   end
 end

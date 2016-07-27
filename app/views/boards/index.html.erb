@@ -5,7 +5,7 @@
 
 <div class="row" id="boards_container">
     <% @boards.each do |board| %>
-    <div class="col-md-4 board"><strong><%=link_to image_tag(board.main_image, class: "img-responsive"), board_path(board)%></strong></div>
+    <div class="col-md-4 board"><strong><%=link_to image_tag(board.main_image, class: "img-responsive image-hover"), board_path(board)%></strong></div>
 
     <% end %>
 </div>
