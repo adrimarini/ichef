@@ -22,23 +22,49 @@
 
 @import url(https://fonts.googleapis.com/css?family=Tangerine|Pinyon+Script|Petit+Formal+Script);
 
+
+
 nav {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
 }
 
+// for cookbook page
 .board{
-  width: 350px;
-  height: 400px;
-  // border: solid 1px black;
-  padding: 10px;
-  padding-top: 165px;
-  // margin: 10px;
-  text-align: center;
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 15pt;
 
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
+.img-responsive{
+  width:100%;
+}
+
+.img-responsive:hover{
+ opacity: .5;
+}
+
+.row > .board{
+  padding: 0;
+}
+
+#board-button-placement{
+  margin: 0 auto;
+  width: 15%;
+  margin-bottom: 15px;
+}
+
+#add-board-button{
+  width: 200px;
+  height: 20px;
+  border-radius: 5px;
+  padding-bottom: 23px;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+  font-family: futura;
+  color:#261226;
+
+}
 
 #boards_container{
   margin: 0 auto;
@@ -57,7 +83,7 @@ nav {
 }
 
 #logo{
-  background-image: url("../images/ichef-logo.png");
+  height: 40px;
 }
 #cookbook-link{
   font-family: futura;
@@ -76,11 +102,7 @@ nav {
   padding: none;
 }
 
-.brand {
-  height: 30px;
 
-  margin: 10px;
-}
 
 .recipe_lines {
   font-family: futura;
@@ -105,6 +127,20 @@ nav {
 
 .image_container{
   float: right;
+}
+
+// board page
+#category-name{
+  text-align: center;
+}
+
+#food-name{
+  text-align: center;
+}
+
+#edit-board-button{
+  margin: 0 auto;
+
 }
 
 .footer {

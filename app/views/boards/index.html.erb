@@ -1,10 +1,11 @@
 <h1 id="cookbook-label"> <%= current_user.first_name.upcase %>'S COOK BOOK </h1>
+<div id="board-button-placement">
+  <button id="add-board-button"><%= link_to "Add a board", new_board_path(@board) %></button>
+</div>
 
 <div class="row" id="boards_container">
     <% @boards.each do |board| %>
-    <div class="col-md-2 board"><strong><%=link_to image_tag(board.main_image), board_path(board)%></strong></div>
+    <div class="col-md-4 board"><strong><%=link_to image_tag(board.main_image, class: "img-responsive"), board_path(board)%></strong></div>
 
     <% end %>
 </div>
-
-<%= link_to "Add a Board", new_board_path(@board) %>
