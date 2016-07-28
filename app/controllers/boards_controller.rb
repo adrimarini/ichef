@@ -1,13 +1,13 @@
 class BoardsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :find_board, only: [:show, :edit, :update, :destroy]
 
   def index
     @boards = Board.where(:user_id => current_user.id)
   end
 
   def show
-    @board = Board.find(params[:id])
     @recipe_step = RecipeStep.new
   end
 
@@ -16,7 +16,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.new(params.require(:board).permit(:name_of_food, :category_id))
+    @board = Board.new(board_params)
     @board.user_id = current_user.id
 
     if @board.save
@@ -27,13 +27,10 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @board = Board.find(params[:id])
   end
 
   def update
-    @board = Board.find(params[:id])
-
-    if @board.update_attributes(params.require(:board).permit(:name_of_food, :category_id))
+    if @board.update_attributes(board_params)
       redirect_to board_path(@board.id)
     else
       render :edit
@@ -41,9 +38,18 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board = Board.find(params[:id])
     @board.destroy
     redirect_to boards_path
+  end
+
+  private
+
+  def board_params
+    params.require(:board).permit(:name_of_food, :category_id)
+  end
+
+  def find_board
+    @board = Board.find(params[:id])
   end
 
 end
