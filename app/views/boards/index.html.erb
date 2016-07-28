@@ -1,16 +1,24 @@
-<h1 id="cookbook-label"> <%= current_user.first_name.upcase %>'S COOK BOOK </h1>
+<h1 id="cookbook-label">
+  <% if current_user.first_name %>
+    <%= current_user.first_name.upcase %>'S COOK BOOK
+  <% else %>
+    YOUR COOK BOOK
+  <% end%>
+</h1>
 <div id="board-button-placement">
-  <button id="add-board-button"><%= link_to "Add a board", new_board_path(@board) %></button>
+  <%= link_to "Add a board", new_board_path(@board), class: "btn btn-default",  id: "add-board-button" %>
 </div>
 
 <div class="row" id="boards_container">
     <% @boards.each do |board| %>
-    <div class="col-md-4 board"><strong><%=link_to image_tag(board.main_image, class: "img-responsive image-hover"), board_path(board)%></strong></div>
+    <div class="col-md-4 board">
+      <strong><%=link_to image_tag(board.main_image, class: "img-responsive image-hover"), board_path(board)%></strong>
+    </div>
 
     <% end %>
 </div>
 <footer class="row footer-color">
   <div class="container">
-    <p class="text-muted">RePlace sticky footer content here.</p>
+    <p class="text-muted">Copy Right Adrianna Marini</p>
   </div>
 </footer>

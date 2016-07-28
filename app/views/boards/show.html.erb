@@ -5,29 +5,25 @@
 <h2 id="category-name"><%= @board.category.name %></h2>
 
 <div class="row">
-  <div id="add-image-button">
-    <%= link_to "Add Image", new_image_path(board_id: @board.id), class: "btn btn-default" %>
-  </div>
-
   <div class="food-board-images">
     <% @board.images.each do |image| %>
     <div class="col-md-6">
       <%= image_tag(image.url, :class=>"food-pics")%>
-      <%= link_to "Delete Image", image_path(image), method: :delete, data: { confirm: "Are you sure you want to delete this image?"} %>
+      <%= link_to "Delete", image_path(image), method: :delete, data: { confirm: "Are you sure you want to delete this image?"}, id: "delete_link" %>
     </div>
     <% end %>
   </div>
 
-  <div class="recipe_container" id="recipe_form">
+  <div class="recipe_container col-md-6" id="recipe_form">
     <ul>
-      <div class="col-md-6">
+      <div class="row">
         <% @board.recipe_steps.order(created_at: :asc).each do |recipe_step| %>
           <li class="recipe_lines">
             <%= recipe_step.step %>
-            <%= link_to "edit", edit_recipe_step_path(recipe_step.id) %>
+            <%= link_to "edit", edit_recipe_step_path(recipe_step.id), id: "edit_recipe_link" %>
           </li>
         <% end %>
-      </div>
+
 
       <%= form_for @recipe_step do |f| %>
         <div>
@@ -38,6 +34,7 @@
         <%= f.hidden_field :board_id, :value => @board.id %>
         <%= f.submit "Add step", :class => 'submit_button' %>
       <% end %>
+      </div>
     </ul>
   </div>
 </div>
@@ -45,3 +42,10 @@
 
 <%= link_to "Back to Cook Book", boards_path, class: "btn btn-default" %>
 <%= link_to "Delete Board", board_path, method: :delete, data: { confirm: "Are you sure you want to delete this board?"}, class: "btn btn-default" %>
+<%= link_to "Add Image", new_image_path(board_id: @board.id), class: "btn btn-default", id: "add-image-button" %>
+
+<footer class="row footer-color-show-page">
+  <div class="container">
+    <p class="text-muted">Copy Right Adrianna Marini</p>
+  </div>
+</footer>

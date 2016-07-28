@@ -1,10 +1,12 @@
 class RecipeStepsController < ApplicationController
+
+before_action :find_recipe_step, only: [:show, :edit, :update, :destroy]
+
   def index
     @recipe_steps = RecipeStep.all
   end
 
   def show
-    @recipe_step = RecipeStep.find(params[:id])
   end
 
   def new
@@ -21,12 +23,10 @@ class RecipeStepsController < ApplicationController
   end
 
   def edit
-    @recipe_step = RecipeStep.find(params[:id])
   end
 
   def update
-    @recipe_step = RecipeStep.find(params[:id])
-      if @recipe_step.update_attributes(params.require(:recipe_step).permit(:step))
+      if @recipe_step.update_attributes(recipe_step_params)
         redirect_to board_path(@recipe_step.board_id)
       else
         render :edit
@@ -34,8 +34,17 @@ class RecipeStepsController < ApplicationController
   end
 
   def destroy
-    @recipe_step = RecipeStep.find(params[:id])
     @recipe_step.destroy
       redirect_to board_path(@recipe_step.board_id)
+  end
+
+  private
+
+  def recipe_step_params
+    params.require(:recipe_step).permit(:step)
+  end
+
+  def find_recipe_step
+    @recipe_step = RecipeStep.find(params[:id])
   end
 end

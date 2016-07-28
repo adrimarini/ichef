@@ -1,18 +1,20 @@
-<h1>Edit this Board</h1>
+<div class="edit_pages">
+  <h1>Edit this Board</h1>
 
-<%= form_for @board do |f| %>
+  <%= form_for @board do |f| %>
+  <div>
+    <%= f.label :name_of_food %>
+    <%= f.text_field :name_of_food %>
+  </div>
+  <div>
+    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+  </div>
 
-<div>
-  <%= f.label :name_of_food %>
-  <%= f.text_field :name_of_food %>
+
+      <%= f.submit "Submit changes", class: "btn btn-default", id: "submit_button" %>
+
+  <% end %>
+    <%= link_to "Back to Cook Book", boards_path, class: "btn btn-default", id: "back_button" %>
+    <%= link_to "Back to Board", board_path, class: "btn btn-default", id: "back_button" %>
+
 </div>
-<div>
-  <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-</div>
-
-
-    <%= f.submit "Submit changes" %>
-
-<% end %>
-
-<%= link_to "Back to Cook Book", boards_path %>

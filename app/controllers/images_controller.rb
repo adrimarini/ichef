@@ -1,11 +1,12 @@
 class ImagesController < ApplicationController
 
+before_action :find_image, only: [:show, :edit, :update, :destroy]
+
   def index
     @images = Image.all
   end
 
   def show
-    @image = Image.find(params[:id])
   end
 
   def new
@@ -23,13 +24,11 @@ class ImagesController < ApplicationController
   end
 
   def edit
-    @image = Image.find(params[:id])
   end
 
   def update
-    @image = Image.find(params[:id])
 
-    if @image.update_attributes(params.require(:image).permit(:url))
+    if @image.update_attributes(find_image)
       redirect_to images_path
     else
       render :edit
@@ -37,10 +36,17 @@ class ImagesController < ApplicationController
   end
 
   def destroy
-    @image = Image.find(params[:id])
     @image.destroy
     redirect_to board_path(@image.board_id)
   end
 
+  private
 
+  def image_params
+    params.require(:image).permit(:url)
+  end
+
+  def find_image
+    @image = Image.find(params[:id])
+  end
 end

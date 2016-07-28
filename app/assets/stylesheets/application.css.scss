@@ -22,14 +22,20 @@
 
 @import url(https://fonts.googleapis.com/css?family=Tangerine|Pinyon+Script|Petit+Formal+Script);
 
+a {
+  color: #000000;
+}
 
+a:hover {
+  color: #FFC224;
+}
 
 nav {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
 }
 
 // for cookbook page
-.board{
+.board {
 
   height: 200px;
   overflow: hidden;
@@ -37,65 +43,66 @@ nav {
 
 }
 
-.image-hover:hover{
+.image-hover:hover {
   cursor: pointer;
 }
-.img-responsive{
+.img-responsive {
   width:100%;
 }
 
-.img-responsive:hover{
+.img-responsive:hover {
  opacity: .5;
 }
 
-.row > .board{
+.row > .board {
   padding: 0;
 }
 
-#board-button-placement{
+#board-button-placement {
   margin: 0 auto;
   width: 15%;
   margin-bottom: 15px;
 }
 
-#add-board-button{
-  width: 200px;
-  height: 20px;
-  border-radius: 5px;
-  padding-bottom: 23px;
-  background-color: #fff;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+#add-board-button {
   font-family: futura;
-  color:#261226;
+  width: 200px;
+  cursor: pointer;
 
 }
 
-#boards_container{
+#add-board-button:hover {
+  color:  #FFC224;
+
+}
+
+#boards_container {
   margin: 0 auto;
   width: 85%;
 }
 
 
-#user-name{
+#user-name {
   color:#261226;
 }
 
-#user-nav{
+#user-nav {
   font-family: futura;
   margin-top: 15px;
   margin-right: 10px;
 
 }
 
-#logo{
+#logo {
   height: 40px;
 }
-#cookbook-link{
+
+#cookbook-link {
   font-family: futura;
   font-size: 12pt;
   color: #000;
 }
-#cookbook-label{
+#cookbook-label {
 
   font-size: 50px;
   text-align: center;
@@ -109,7 +116,7 @@ nav {
 
 }
 
-.navbar-left{
+.navbar-left {
   padding: none;
 }
 
@@ -127,73 +134,87 @@ nav {
   font-family: 'Petit Formal Script', cursive;
 }
 
-.recipe_container{
+.recipe_container {
   float: left;
   background-color: #F5F5F5;
   border-radius: 3px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
-  margin-left: 5%;
   padding: 15px;
 }
 
-.image_container{
+.image_container {
   float: right;
 }
 
 // board page
-#category-name{
+#category-name {
   text-align: center;
 }
 
-#food-name{
+#food-name {
   text-align: center;
 }
 
-#edit-board-button{
+#edit-board-button {
   margin: 0 auto;
 
 }
 
-#add-image-button{
+#add-image-button {
   float: right;
-  margin: 20px;
-  margin-bottom: 50px;
+  // margin: 20px;
+  // margin-bottom: 50px;
 }
 
-.food-pics{
+#edit_recipe_link {
+  color: grey;
+  font-weight: lighter;
+  font-size: 10pt;
+}
+
+.food-pics {
   height: 300px;
-  max-width: 200px;
+  max-width: 360px;
   overflow: hidden;
   background-size: cover;
 }
 
-.food-board-images{
+.food-board-images {
   width: 50%;
   float: right;
 }
 
-.footer-color{
+.footer-color {
   background-color: #000;
   margin-top: 50px;
   height: 40px;
 }
 
-#red-background{
-  background-color: #D40D13;
+.footer-color-show-page {
+  background-color: #fff;
+  margin-top: 50px;
+  height: 40px;
+}
+
+#red-background {
   height: 768px;
   color:#fff;
   text-align: left;
   font-family: futura;
   padding-top: 50px;
   padding-left: 70px;
-
+  background-image: url("welcome-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.navbar{
+
+
+.navbar {
   margin-bottom: 0;
 }
 
-.welcome-features{
+.welcome-features {
   margin: 0 auto;
   text-align: center;
   font-size: 24pt;
@@ -201,28 +222,39 @@ nav {
   margin-left: 30px;
 }
 
-a {
-  color: #000000;
-}
 
-.main-logo{
+.main-logo {
   margin: 0 auto;
   width: 50%;
   margin-top: 30%;
 }
 
-#welcome-title{
+#welcome-title {
   // margin-top: 20%;
   margin-bottom: 10%;
   font-size: 50pt;
 }
 
-#welcome-text{
+#welcome-text {
   margin-left: 10%;
   margin-top: 25%;
+}
+
+#welcome_sign_up_button {
+  background-color: rgba(212, 13, 19, .9);
+  color: #ffffff;
+}
+
+#welcome_log_in_button {
+  border-color: rgba(212, 13, 19, .9);
 }
 
 #access_pages {
   text-align: center;
   margin-top: 5%;
+}
+
+.edit_pages {
+  text-align: center;
+  margin-top: 10%;
 }

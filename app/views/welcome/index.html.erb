@@ -7,13 +7,14 @@
         Upload photo's of your food or add photo's for future inspiration<br><br>
         Keep your recipes in an organized spot that will never go missing <br><br>
         There is no limit on the amount of recipes you can add to your Cookbook!
+
     </div>
   </div>
   <div class="col-md-6">
     <div class="main-logo"><%= image_tag("ichef-logo.png") %></div>
     <div class="welcome-features">
-    <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-default"%> |
-    <%= link_to 'Log In', new_user_session_path, class: "btn btn-default" %>
+    <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-default", id: "welcome_sign_up_button"%> |
+    <%= link_to 'Log In', new_user_session_path, class: "btn btn-default", id: "welcome_log_in_button" %>
     </div>
   </div>
 

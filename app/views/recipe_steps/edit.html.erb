@@ -1,16 +1,17 @@
-<h1>Edit Recipe Step</h1>
+<div class="edit_pages">
+  <h1>Edit Recipe Step</h1>
 
-<%= form_for @recipe_step do |f| %>
+  <%= form_for @recipe_step do |f| %>
+    <div>
+      <%= f.label :step %>
+      <%= f.text_field :step %>
+    </div>
 
-  <div>
-    <%= f.label :step %>
-    <%= f.text_field :step %>
-  </div>
+    <%= f.hidden_field :board_id, :value => @recipe_step.board_id %>
+    <%= f.submit "Update Step", class: "btn btn-default", id: "update_button" %>
 
-  <%= f.hidden_field :board_id, :value => @recipe_step.board_id %>
-  <%= f.submit "Update Step" %>
+  <% end %>
 
-<% end %>
-
-<%= link_to "Back", board_path(@recipe_step.board_id) %>
-<%= link_to "Delete", recipe_step_path, method: :delete, data: { confirm: "Are you sure you want to delete this recipe step?"} %>
+  <%= link_to "Back", board_path(@recipe_step.board_id), class: "btn btn-default", id: "back_but"%>
+  <%= link_to "Delete", recipe_step_path, method: :delete, data: { confirm: "Are you sure you want to delete this recipe step?"}, class: "btn btn-default", id: "delete_button" %>
+</div>

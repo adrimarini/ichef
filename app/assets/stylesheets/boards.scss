@@ -1,3 +1,33 @@
 // Place all the styles related to the boards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#back_button {
+  margin-top: 15px;
+  border-color: rgba(212, 13, 19, .9);
+}
+
+#submit_button {
+  margin-top: 15px;
+  background-color:rgba(212, 13, 19, .9);
+
+}
+
+#delete_link {
+  color: grey;
+}
+
+.add_board_page {
+  text-align: center;
+  margin-top: 15%;
+}
+
+#back_to_cook_book_button {
+  margin-top: 15px;
+  border-color: rgba(212, 13, 19, .9);
+}
+
+#add_board_button {
+  margin-top: 15px;
+  background-color:rgba(212, 13, 19, .9);
+}
