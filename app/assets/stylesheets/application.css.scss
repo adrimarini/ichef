@@ -34,6 +34,7 @@ nav {
   height: 200px;
   overflow: hidden;
 
+
 }
 
 .image-hover:hover{
@@ -74,6 +75,7 @@ nav {
   width: 85%;
 }
 
+
 #user-name{
   color:#261226;
 }
@@ -98,7 +100,13 @@ nav {
   font-size: 50px;
   text-align: center;
   font-family: futura;
-  margin:50px;
+  // margin:50px;
+  // border: solid 2px black;
+  padding: 10px;
+  margin: 50px;
+  // display: inline;
+  // margin-left: 30%;
+
 }
 
 .navbar-left{
@@ -146,6 +154,75 @@ nav {
 
 }
 
-.footer {
-  margin-top: 200px;
+#add-image-button{
+  float: right;
+  margin: 20px;
+  margin-bottom: 50px;
+}
+
+.food-pics{
+  height: 300px;
+  max-width: 200px;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.food-board-images{
+  width: 50%;
+  float: right;
+}
+
+.footer-color{
+  background-color: #000;
+  margin-top: 50px;
+  height: 40px;
+}
+
+#red-background{
+  background-color: #D40D13;
+  height: 768px;
+  color:#fff;
+  text-align: left;
+  font-family: futura;
+  padding-top: 50px;
+  padding-left: 70px;
+
+}
+
+.navbar{
+  margin-bottom: 0;
+}
+
+.welcome-features{
+  margin: 0 auto;
+  text-align: center;
+  font-size: 24pt;
+  margin-top: 60px;
+  margin-left: 30px;
+}
+
+a {
+  color: #000000;
+}
+
+.main-logo{
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 30%;
+}
+
+#welcome-title{
+  // margin-top: 20%;
+  margin-bottom: 10%;
+  font-size: 50pt;
+}
+
+#welcome-text{
+  margin-left: 10%;
+  margin-top: 25%;
+}
+
+#access_pages {
+  text-align: center;
+  margin-top: 5%;
 }
