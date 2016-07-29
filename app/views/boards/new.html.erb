@@ -3,16 +3,13 @@
 
   <%= form_for @board do |f| %>
 
-      <div>
-          <%= f.label :name_of_food %>
-          <%= f.text_field :name_of_food %>
-          <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-      </div>
+    <div>
+      <%= f.label :name_of_food %>
+      <%= f.text_field :name_of_food %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+    </div>
 
-
-
-
-      <%= f.submit "Add Board", class: "btn btn-default", id: "add_board_button" %>
+  <%= f.submit "Add Board", class: "btn btn-default", id: "add_board_button" %>
 
   <% end %>
 

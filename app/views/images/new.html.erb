@@ -2,15 +2,15 @@
 
 <%= form_for @image do |f| %>
 
-    <div>
-        <%= f.label :url %>
-        <%= f.text_field :url %>
-    </div>
+<div>
+  <%= f.label :url %>
+    <%= f.text_field :url %>
+</div>
 
-    <%= f.hidden_field :board_id, :value => params[:board_id] %>
+<%= f.hidden_field :board_id, :value => params[:board_id] %>
 
 
-    <%= f.submit "Add image" %>
+<%= f.submit "Add image" %>
 
 <% end %>
 

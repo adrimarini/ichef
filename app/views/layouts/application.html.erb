@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <link href="/assets/chefhat.png" rel="icon" type="image/png" />
+  <link href="/assets/chefhat.png" rel="icon" type="image/png" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <title>iChef</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -14,7 +14,6 @@
     <li class="nav-item active">
       <%= link_to "COOK BOOK", boards_path, :class => "nav-link", :id =>"cookbook-link" %> <span class="sr-only">(current)</span>
     </li>
-
   </ul>
   <p align="right" id="user-nav">
   <% if user_signed_in? %>
