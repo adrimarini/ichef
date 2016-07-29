@@ -7,7 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Board.destroy_all
 Category.destroy_all
-Image.destroy_all
 
 categories = Category.create([
   {name: "Breakfast"},
@@ -18,9 +17,9 @@ categories = Category.create([
   ])
 
 boards = Board.create([
-  {name_of_food: "Pasta Pomedoro", category: Category.find_by(name: "Dinner")},
-  {name_of_food: "Chocolate Cake", category: Category.find_by(name: "Dessert")},
-  {name_of_food: "Morning Bun", category: Category.find_by(name: "Breakfast")}
+  {name_of_food: "Pasta Pomedoro", category: Category.find_by(name: "Dinner"), user: User.last},
+  {name_of_food: "Chocolate Cake", category: Category.find_by(name: "Dessert"), user: User.last},
+  {name_of_food: "Morning Bun", category: Category.find_by(name: "Breakfast"), user:User.last}
 ])
 
 recipe_steps = RecipeStep.create([

@@ -33,7 +33,9 @@ a:hover {
 nav {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
 }
-
+.navbar {
+  margin-bottom: 0;
+}
 // for cookbook page
 .board {
 
@@ -120,7 +122,7 @@ nav {
   padding: none;
 }
 
-
+// board page
 
 .recipe_lines {
   font-family: futura;
@@ -146,7 +148,7 @@ nav {
   float: right;
 }
 
-// board page
+
 #category-name {
   text-align: center;
 }
@@ -196,6 +198,8 @@ nav {
   height: 40px;
 }
 
+// welcome page
+
 #red-background {
   height: 768px;
   color:#fff;
@@ -208,11 +212,6 @@ nav {
   background-repeat: no-repeat;
 }
 
-
-
-.navbar {
-  margin-bottom: 0;
-}
 
 .welcome-features {
   margin: 0 auto;
@@ -251,7 +250,14 @@ nav {
 
 #access_pages {
   text-align: center;
-  margin-top: 5%;
+  margin: 0 auto;
+  width: 75%;
+  background-color: rgba(212, 13, 19, .5);
+  padding: 20px;
+  width: 500px;
+  margin-top: 10%;
+  border-radius: 5px;
+  color: #000;
 }
 
 .edit_pages {
@@ -262,4 +268,12 @@ nav {
 .edit_profile_page {
   text-align: center;
 
+}
+
+//log in page
+
+.login-background {
+  background-image: url(<%= asset_url("login-image.jpeg") %>);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
